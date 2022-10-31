@@ -47,17 +47,17 @@ parser = ArgumentParser()
 
 freq_group = parser.add_mutually_exclusive_group(required=True)
 freq_group.add_argument("-f", "--frequency", type=float, action="append", dest="freqs",
-    help="Can be specified more than once, specifies frequencies in Hz of the beeped notes"
+    help="Can be specified more than once, specifies frequencies in Hz of the barked notes"
 )
 freq_group.add_argument("-n", "--note", action=NoteToFrequencyAction, dest="freqs",
     help="Can be specified more than once, specifies notes (e.g. A4). You can use b, #, x, bb for accidentals."
 )
 
 parser.add_argument("-d", "--duration", type=float, default=1, dest="time",
-    help="The duration of the beep in seconds."
+    help="The duration of the bark in seconds."
 )
 parser.add_argument("-v", "--volume", type=float, default=0.5,
-    help="The volume of the beep, defaults to 0.5"
+    help="The volume of the bark, defaults to 0.5"
 )
 
 args = parser.parse_args()
